@@ -91,7 +91,7 @@ export default function AboutSection() {
               <div className="absolute -top-4 -right-4 w-full h-full rounded-2xl border-2 border-clay-300/60 z-0" />
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl aspect-[4/5]">
                 <img
-                  src="https://images.unsplash.com/photo-1598300056393-4aac492f4344?auto=format&fit=crop&w=900&q=80"
+                  src="https://res.cloudinary.com/dkiyfvxpm/image/upload/v1773406505/featured6_mbyzm3.jpg"
                   alt="Skilled artisan crafting a handmade rug at LoomistryStudio"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />

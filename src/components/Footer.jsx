@@ -47,7 +47,7 @@ export default function Footer() {
           <div className="flex items-center gap-3 mb-5">
             <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-clay-400">
               <img
-                src="https://cdn-icons-png.flaticon.com/512/3502/3502688.png"
+                src="https://res.cloudinary.com/dkiyfvxpm/image/upload/v1773740967/Monogram_icnfv7.png"
                 alt="LoomistryStudio"
                 className="w-full h-full object-cover"
               />

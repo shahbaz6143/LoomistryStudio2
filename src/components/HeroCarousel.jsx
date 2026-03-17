@@ -1,19 +1,21 @@
 import { useState, useEffect, useCallback } from 'react'
 
-const slides = [
-  {
-    id: 'slide-1',
-    title: 'Handcrafted Tufted Rugs\nfrom India',
-    subtitle: 'Premium wool rugs designed for modern interiors.',
-    image: 'https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1920&q=80',
-  },
-  {
-    id: 'slide-2',
-    title: 'Modern Design Meets\nTraditional Craftsmanshipvgvgfhgf', 
-    subtitle: 'Each rug is handcrafted by skilled artisans using high-quality wool.',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80',
-  },
-]
+const slides =  [
+      {
+        id: "slide-1",
+        title: "Handcrafted Tufted Rugs from India",
+        subtitle: "Premium wool rugs designed for modern interiors.",
+        desktopImage: "https://res.cloudinary.com/dkiyfvxpm/image/upload/v1773741079/topBanner1_dvndk0.jpg",
+        mobileImage: "https://res.cloudinary.com/dkiyfvxpm/image/upload/v1773741098/bannerForMobile_e2k2g7.png"
+      },
+      {
+        id: "slide-2",
+        title: "Modern Design Meets Traditional Craftsmanship",
+        subtitle: "Each rug is handcrafted by skilled artisans using high-quality wool.",
+        desktopImage: "https://res.cloudinary.com/dkiyfvxpm/image/upload/v1773741078/topBanner_ibu7ip.jpg",
+        mobileImage: "https://res.cloudinary.com/dkiyfvxpm/image/upload/v1773741098/bannerForMobile2_osvqio.png"
+      }
+    ]
 
 export default function HeroCarousel() {
   const [current, setCurrent] = useState(0)
@@ -48,7 +50,7 @@ export default function HeroCarousel() {
           }`}
         >
           <img
-            src={slide.image}
+            src={slide.desktopImage}
             alt={slide.title}
             className="w-full h-full object-cover"
             loading={i === 0 ? 'eager' : 'lazy'}

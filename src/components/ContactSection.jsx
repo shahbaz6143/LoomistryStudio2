@@ -59,7 +59,7 @@ export default function ContactSection() {
             <span className="w-10 h-px bg-clay-400" />
           </div>
           <h2 className="heading-lg text-stone-800">
-            Let's <span className="text-clay-600 italic">Connecthghdskjkgd</span>
+            Let's <span className="text-clay-600 italic">Connect</span>
           </h2>
           <p className="text-stone-500 mt-4 text-lg max-w-xl mx-auto">
             Have questions or looking for a custom rug? Send us a message and our team will get back to you.

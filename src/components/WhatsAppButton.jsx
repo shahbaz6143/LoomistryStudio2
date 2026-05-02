@@ -9,7 +9,14 @@ export default function WhatsAppButton() {
       className="fixed bottom-6 right-6 z-50 group flex items-center gap-3"
     >
       {/* Tooltip label */}
-      <span className="hidden sm:block max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out whitespace-nowrap bg-white text-stone-700 text-sm font-medium shadow-lg rounded-full px-4 py-2 border border-stone-100">
+      <span className="hidden sm:block 
+  opacity-0 translate-x-2 
+  group-hover:opacity-100 group-hover:translate-x-0 
+  transition-all duration-300 ease-in-out 
+  whitespace-nowrap 
+  bg-white text-stone-700 text-sm font-medium 
+  shadow-lg rounded-full px-4 py-2 border border-stone-100">
+
         Chat on WhatsApp
       </span>
 

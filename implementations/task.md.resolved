@@ -1,0 +1,19 @@
+# Backend Payment Implementation
+
+## Phase 1: Backend Setup
+- [x] Initialize `backend` directory and `package.json`
+- [x] Install dependencies (`express`, `cors`, `dotenv`, `stripe`)
+- [x] Create `backend/server.js` (Express + CORS setup)
+- [x] Create `backend/.env` for secrets
+
+## Phase 2: Payment API Endpoint
+- [x] Set up Stripe instance in server
+- [x] Create POST `/api/create-checkout-session` route
+- [x] Calculate total securely on backend
+- [x] Return Stripe Session URL
+
+## Phase 3: Frontend Integration
+- [x] Install `@stripe/stripe-js` in frontend
+- [x] Update `src/pages/Checkout.jsx` to call backend endpoint
+- [x] Handle redirect to Stripe Checkout
+- [x] Create simple Success and Cancel pages

@@ -1,35 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 
-const rugs = [
-  {
-    id: 'rug-101',
-    name: 'Ivory Minimal Abstract Wool Rug',
-    imageUrl: 'https://res.cloudinary.com/dkiyfvxpm/image/upload/v1773406670/featured1_kxfggr.jpg',
-    price: '$320',
-    tag: 'Bestseller',
-  },
-  {
-    id: 'rug-102',
-    name: 'Midnight Blue Geometric Wool Rug',
-    imageUrl: 'https://res.cloudinary.com/dkiyfvxpm/image/upload/v1773406611/featured7_bkeici.jpg',
-    price: '$360',
-    tag: 'New',
-  },
-  {
-    id: 'rug-103',
-    name: 'Terracotta Boho Hand Tufted Runner',
-    imageUrl: 'https://res.cloudinary.com/dkiyfvxpm/image/upload/v1773406570/topBanner4_w61wnb.jpg',
-    price: '$210',
-    tag: 'Popular',
-  },
-  {
-    id: 'rug-104',
-    name: 'Monochrome Modern Minimal Rug',
-    imageUrl: 'https://res.cloudinary.com/dkiyfvxpm/image/upload/v1773741396/featured3_aaygom.jpg',
-    price: '$295',
-    tag: null,
-  },
-]
+import { Link } from 'react-router-dom'
+import { products as rugs } from '../data/products'
 
 function RugCard({ rug, delay }) {
   const ref = useRef(null)
@@ -80,12 +52,12 @@ function RugCard({ rug, delay }) {
               hovered ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <a
-              href="#contact"
+            <Link
+              to={`/product/${rug.id}`}
               className="w-full text-center bg-white text-stone-800 py-2.5 rounded-xl font-semibold text-sm hover:bg-clay-600 hover:text-white transition-colors duration-300"
             >
-              Enquire Now
-            </a>
+              View Details
+            </Link>
           </div>
           {/* Tag badge */}
           {rug.tag && (
@@ -101,7 +73,7 @@ function RugCard({ rug, delay }) {
             {rug.name}
           </h3>
           <div className="flex items-center justify-between">
-            <span className="text-clay-600 font-bold text-xl">{rug.price}</span>
+            <span className="text-clay-600 font-bold text-xl">${rug.price}</span>
             <span className="text-stone-400 text-xs">100% Wool</span>
           </div>
         </div>

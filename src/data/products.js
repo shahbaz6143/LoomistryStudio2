@@ -1,0 +1,38 @@
+export const products = [
+  {
+    id: 'rug-101',
+    name: 'Ivory Minimal Abstract Wool Rug',
+    description: 'A beautiful ivory rug with minimalist abstract shapes. Hand-tufted with 100% premium New Zealand wool for a soft, plush feel underfoot. Perfect for modern living rooms or serene bedrooms.',
+    imageUrl: 'https://res.cloudinary.com/dkiyfvxpm/image/upload/v1773406670/featured1_kxfggr.jpg',
+    price: 320,
+    tag: 'Bestseller',
+    sizes: ['5x8 ft', '6x9 ft', '8x10 ft'],
+  },
+  {
+    id: 'rug-102',
+    name: 'Midnight Blue Geometric Wool Rug',
+    description: 'Deep midnight blue meets crisp white geometric lines in this striking piece. Hand-tufted and built to last, making it a great centerpiece for any contemporary space.',
+    imageUrl: 'https://res.cloudinary.com/dkiyfvxpm/image/upload/v1773406611/featured7_bkeici.jpg',
+    price: 360,
+    tag: 'New',
+    sizes: ['4x6 ft', '5x8 ft', '8x10 ft'],
+  },
+  {
+    id: 'rug-103',
+    name: 'Terracotta Boho Hand Tufted Runner',
+    description: 'Warm terracotta tones bring an earthy, bohemian vibe to your home. Designed specifically as a runner, it is perfect for hallways, kitchens, or alongside the bed.',
+    imageUrl: 'https://res.cloudinary.com/dkiyfvxpm/image/upload/v1773406570/topBanner4_w61wnb.jpg',
+    price: 210,
+    tag: 'Popular',
+    sizes: ['2.5x7 ft', '2.5x10 ft'],
+  },
+  {
+    id: 'rug-104',
+    name: 'Monochrome Modern Minimal Rug',
+    description: 'Sleek, monochrome, and sophisticated. This rug plays with pile heights to create a subtle textural pattern that adds depth without overwhelming the room.',
+    imageUrl: 'https://res.cloudinary.com/dkiyfvxpm/image/upload/v1773741396/featured3_aaygom.jpg',
+    price: 295,
+    tag: null,
+    sizes: ['5x8 ft', '6x9 ft'],
+  },
+]

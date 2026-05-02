@@ -1,0 +1,66 @@
+# Backend & Payments Implementation Plan
+
+To process real payments securely, we cannot put secret API keys in your React frontend code. We must build a secure "Backend" server.
+
+This plan covers building a **Node.js + Express** backend and connecting it to your frontend checkout.
+
+## User Review Required
+
+> [!WARNING]  
+> This introduces a new folder structure. Your project will now have a `frontend/` (the React app we just built) and a `backend/` (the new server).
+
+## Open Questions
+
+> [!IMPORTANT]  
+> **Which gateway to start with?** For the initial setup, I propose we build the backend using **Stripe**, as their test mode is extremely developer-friendly and allows us to simulate international credit card checkouts immediately. Once that is working, we can easily add Razorpay logic later. Do you approve of starting with Stripe integration?
+
+---
+
+## Proposed Changes
+
+We will execute this in 3 phases.
+
+### Phase 1: Backend Setup
+We will initialize a new Node.js server inside a `backend` directory.
+
+#### [NEW] `backend/package.json`
+- Initialize a new Node project and install dependencies: `express`, `cors`, `dotenv`, and `stripe`.
+
+#### [NEW] `backend/server.js`
+- Create the core Express server.
+- Configure CORS to allow your React frontend (running on localhost:5173) to communicate with this backend (running on localhost:3000).
+
+---
+
+### Phase 2: Payment API Endpoint
+We need an endpoint that the frontend can call to initiate a payment.
+
+#### [NEW] `backend/routes/payment.js`
+- Create a `/api/create-checkout-session` endpoint.
+- This endpoint will receive the cart items from the frontend, calculate the total securely, and talk to Stripe to generate a unique "Payment Session URL".
+
+#### [NEW] `backend/.env`
+- A secure file to hold your secret Stripe API keys (which you will need to get from the Stripe Dashboard later).
+
+---
+
+### Phase 3: Frontend Integration
+We will update your existing `Checkout.jsx` to talk to the new backend.
+
+#### [NEW] Dependencies
+- Install `@stripe/stripe-js` in the frontend (LoomistryStudio-main directory) to handle redirection to Stripe's secure payment page.
+
+#### [MODIFY] `src/pages/Checkout.jsx`
+- Remove the simulated 2-second delay.
+- Update the `handleSubmit` function to send the user's cart data to `http://localhost:3000/api/create-checkout-session`.
+- Automatically redirect the user to the Stripe Checkout page returned by our backend.
+
+---
+
+## Verification Plan
+
+### Manual Verification
+1. We will run both the frontend (`npm run dev`) and the new backend (`node server.js`) simultaneously.
+2. We will add a rug to the cart and proceed to checkout.
+3. Upon clicking "Place Order", we will verify that the frontend successfully receives a checkout URL from the backend.
+4. We will verify that the browser redirects to a secure Stripe-hosted payment page in Test Mode.
